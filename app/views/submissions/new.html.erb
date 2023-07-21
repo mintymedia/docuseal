@@ -60,7 +60,7 @@
     <div id="message_field" class="card card-compact bg-base-200 hidden">
       <div class="card-body">
         <div class="form-control space-y-2">
-          <span class="label-text">Hi there,</span>
+          <span class="label-text">Beste,</span>
           <autoresize-textarea>
             <%= f.text_area :message, value: format(SubmitterMailer::DEFAULT_MESSAGE, name: @template.name), required: true, class: 'base-textarea !rounded-lg w-full' %>
           </autoresize-textarea>
