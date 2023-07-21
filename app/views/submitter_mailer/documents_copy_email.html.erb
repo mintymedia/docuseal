@@ -1,6 +1,6 @@
-<p>Hi there,</p>
-<p>Please check the copy of your "<%= @submitter.submission.template.name %>" submission in the email attachments.</p>
-<p>Alternatively, you can download the copy using:</p>
+<p>Beste,</p>
+<p>Graag verwijzen we u naar het volgende "<%= @submitter.submission.template.name %>" document in bijlage.</p>
+<p>Als alternatief, kan het document ook gedownload worden via:</p>
 <% @documents.each do |document| %>
   <ul>
     <li>
@@ -9,5 +9,5 @@
   </ul>
 <% end %>
 <p>
-  Thanks,<br><%= @submitter.submission.template.account.name %>
+  Bedankt,<br><%= @submitter.submission.template.account.name %>
 </p>

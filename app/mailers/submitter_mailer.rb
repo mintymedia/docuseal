@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 class SubmitterMailer < ApplicationMailer
-  DEFAULT_MESSAGE = %(You have been invited to submit the "%<name>s" form:)
+  DEFAULT_MESSAGE = %(Het volgende document "%<name>s" is naar u verstuurd:)
 
   def invitation_email(submitter, message: format(DEFAULT_MESSAGE, name: submitter.submission.template.name))
     @submitter = submitter
     @message = message
 
     mail(to: @submitter.email,
-         subject: 'You have been invited to submit a form')
+         subject: 'U bent uitgenodig het volgende document te bekijken')
   end
 
   def completed_email(submitter, user)
@@ -16,7 +16,7 @@ class SubmitterMailer < ApplicationMailer
     @user = user
 
     mail(to: user.email,
-         subject: %(#{submitter.email} has completed the "#{submitter.submission.template.name}" form))
+         subject: %(#{submitter.email} heeft document getekend "#{submitter.submission.template.name}" form))
   end
 
   def documents_copy_email(submitter)
@@ -30,6 +30,6 @@ class SubmitterMailer < ApplicationMailer
       attachments[attachment.filename.to_s] = attachment.download
     end
 
-    mail(to: submitter.email, subject: 'Your copy of documents')
+    mail(to: submitter.email, subject: 'Kopie of het getekende document')
   end
 end
